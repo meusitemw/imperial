@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Imperial Alimentos - Alimentos de qualidade e produtos para animais em Juazeiro-BA. Compre arroz, feijão, açúcar e rações premium.">
+    <meta name="keywords" content="alimentos, ração, pet shop, Juazeiro, Bahia, comida para animais">
+    <meta property="og:title" content="Imperial Alimentos">
+    <meta property="og:type" content="website">
+    <title>Imperial Alimentos - Alimentos e Produtos para Animais</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Variáveis CSS */
+        :root {
+            --primary-color: #003366;
+            --secondary-color: #ff8c00;
+            --accent-color: #ff5500;
+            --whatsapp-color: #25D366;
+            --text-color: #333;
+            --light-bg: #fff9f0;
+            --white: #ffffff;
+            --gray-light: #f5f5f5;
+            --gray-medium: #ddd;
+            --gray-dark: #777;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.15);
+            --transition: all 0.3s ease;
+        }
+
+        /* Reset e estilos gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            color: var(--secondary-color);
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Botões */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            color: var(--white);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Header */
+        header {
+            padding: 15px 0;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 990;
+        }
+        
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .logo {
+            font-size: 36px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .logo::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), #FFCC00, #000);
+        }
+        
+        .logo-tagline {
+            font-size: 12px;
+            color: var(--gray-dark);
+            margin-left: 10px;
+            max-width: 100px;
+            line-height: 1.3;
+        }
+        
+        .search-box {
+            display: flex;
+            margin: 0 20px;
+            flex: 1;
+            max-width: 500px;
+            min-width: 200px;
+        }
+        
+        .search-box input {
+            padding: 10px 15px;
+            border: 2px solid var(--gray-medium);
+            border-radius: 30px 0 0 30px;
+            width: 100%;
+            outline: none;
+            transition: var(--transition);
+            font-family: inherit;
+        }
+        
+        .search-box input:focus {
+            border-color: var(--secondary-color);
+        }
+        
+        .search-box button {
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            color: var(--white);
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 30px 30px 0;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: inherit;
+        }
+        
+        .search-box button:hover {
+            background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+        }
+        
+        .contact-info {
+            text-align: right;
+            color: #330066;
+            font-size: 14px;
+            min-width: 180px;
+        }
+        
+        .contact-info p:first-child {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+        
+        .contact-info i {
+            margin-right: 5px;
+            color: var(--secondary-color);
+        }
+
+        /* Menu de navegação */
+        nav.main-menu {
+            background: linear-gradient(135deg, var(--primary-color), #0066cc);
+            padding: 12px 0;
+            position: relative;
+        }
+        
+        .menu-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav.main-menu ul {
+            display: flex;
+            gap: 25px;
+        }
+        
+        nav.main-menu a {
+            color: var(--white);
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        nav.main-menu a::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+        
+        nav.main-menu a:hover::after {
+            width: 100%;
+        }
+        
+        .cart-icon {
+            position: relative;
+            color: var(--white);
+            font-size: 20px;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Layout de 3 colunas */
+        .main-content {
+            display: flex;
+            margin: 30px 0;
+            gap: 20px;
+        }
+        
+        .left-sidebar {
+            width: 25%;
+        }
+        
+        .center-content {
+            width: 50%;
+        }
+        
+        .right-sidebar {
+            width: 25%;
+        }
+
+        /* Blocos de sidebar */
+        .sidebar-block {
+            margin-bottom: 30px;
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+        
+        .sidebar-block:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .sidebar-title {
+            background: linear-gradient(135deg, var(--primary-color), #0066cc);
+            padding: 12px 15px;
+            font-weight: bold;
+            color: var(--white);
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .sidebar-title i {
+            font-size: 18px;
+        }
+        
+        .sidebar-list li {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--gray-medium);
+            transition: var(--transition);
+        }
+        
+        .sidebar-list li:hover {
+            background-color: var(--gray-light);
+            padding-left: 20px;
+        }
+        
+        .sidebar-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .sidebar-list a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Formulário newsletter */
+        .newsletter-form {
+            padding: 15px;
+        }
+        
+        .newsletter-form input {
+            width: 100%;
+            padding: 10px 15px;
+            margin-bottom: 12px;
+            border: 1px solid var(--gray-medium);
+            border-radius: 5px;
+            outline: none;
+            transition: var(--transition);
+            font-family: inherit;
+        }
+        
+        .newsletter-form input:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.1);
+        }
+        
+        .newsletter-form button {
+            background: linear-gradient(135deg, #ff3300, var(--accent-color));
+            color: var(--white);
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            transition: var(--transition);
+            font-family: inherit;
+        }
+        
+        .newsletter-form button:hover {
+            background: linear-gradient(135deg, var(--accent-color), #ff3300);
+            transform: translateY(-2px);
+        }
+
+        /* Produtos */
+        .section-block {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+        
+        .section-block:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .section-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary-color);
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title i {
+            color: var(--secondary-color);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+        
+        .product-item {
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .product-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-image-container {
+            position: relative;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 180px;
+            background-color: var(--gray-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .product-image {
+            max-height: 100%;
+            width: auto;
+            transition: var(--transition);
+        }
+        
+        .product-item:hover .product-image {
+            transform: scale(1.05);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .product-actions {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            opacity: 0;
+            transition: var(--transition);
+            transform: translateY(10px);
+        }
+        
+        .product-item:hover .product-actions {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .product-action-btn {
+            flex: 1;
+            background-color: rgba(0,0,0,0.7);
+            color: var(--white);
+            border: none;
+            padding: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .product-action-btn:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .product-name {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-color);
+            margin-bottom: 5px;
+        }
+        
+        .product-price {
+            color: var(--accent-color);
+            font-weight: bold;
+            display: block;
+        }
+        
+        .product-old-price {
+            text-decoration: line-through;
+            color: var(--gray-dark);
+            font-size: 12px;
+        }
+
+        /* Banner promocional */
+        .promo-banner {
+            background: linear-gradient(135deg, var(--primary-color), #0066cc);
+            color: var(--white);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .promo-banner::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            animation: rotate 15s linear infinite;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .promo-banner h3 {
+            margin-bottom: 10px;
+            position: relative;
+        }
+        
+        .promo-banner p {
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        /* Rodapé */
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 14px;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 30px 0 20px;
+            position: relative;
+        }
+        
+        .footer-divider-red {
+            height: 5px;
+            background: linear-gradient(90deg, #ff3300, var(--secondary-color));
+            margin-bottom: 20px;
+        }
+        
+        .footer-divider-yellow {
+            height: 2px;
+            background: linear-gradient(90deg, #FFCC00, var(--secondary-color));
+            margin: 20px auto;
+            width: 80%;
+            opacity: 0.5;
+        }
+        
+        .footer-company {
+            font-weight: bold;
+            color: var(--secondary-color);
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .footer-address {
+            color: #ccc;
+            margin: 5px 0;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 15px 0;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .footer-social a {
+            color: var(--white);
+            font-size: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .footer-social a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        .footer-copyright {
+            color: #aaa;
+            font-size: 12px;
+        }
+
+        /* Botão do WhatsApp */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--whatsapp-color);
+            color: var(--white);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            z-index: 999;
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Atendente Virtual */
+        .chatbot {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 350px;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            z-index: 998;
+            overflow: hidden;
+            display: none;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .chatbot.active {
+            display: block;
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .chatbot-header {
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            color: var(--white);
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .chatbot-header h3 {
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .chatbot-close {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 20px;
+            cursor: pointer;
+        }
+        
+        .chatbot-body {
+            padding: 15px;
+            height: 300px;
+            overflow-y: auto;
+            background-color: var(--gray-light);
+        }
+        
+        .chatbot-message {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .bot-message {
+            align-items: flex-start;
+        }
+        
+        .user-message {
+            align-items: flex-end;
+        }
+        
+        .message-time {
+            font-size: 11px;
+            color: var(--gray-dark);
+            margin-bottom: 3px;
+        }
+        
+        .message-bubble {
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 18px;
+            margin-top: 5px;
+            font-size: 14px;
+        }
+        
+        .bot-message .message-bubble {
+            background: var(--white);
+            border-top-left-radius: 5px;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .user-message .message-bubble {
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            color: var(--white);
+            border-top-right-radius: 5px;
+        }
+        
+        .chatbot-input {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid var(--gray-medium);
+            background-color: var(--white);
+        }
+        
+        .chatbot-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid var(--gray-medium);
+            border-radius: 20px;
+            outline: none;
+            font-family: inherit;
+        }
+        
+        .chatbot-input button {
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            color: var(--white);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .chatbot-input button:hover {
+            transform: scale(1.05);
+        }
+        
+        .chatbot-trigger {
+            position: fixed;
+            bottom: 30px;
+            right: 100px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            color: var(--white);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            box-shadow: 0 4px 12px rgba(255, 140, 0, 0.3);
+            z-index: 999;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .chatbot-trigger:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(255, 140, 0, 0.4);
+        }
+
+        /* Elementos Animalistas */
+        .animal-paw {
+            position: absolute;
+            opacity: 0.05;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .paw-1 {
+            top: 10%;
+            left: 5%;
+            font-size: 100px;
+            transform: rotate(-20deg);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .paw-2 {
+            bottom: 15%;
+            right: 8%;
+            font-size: 80px;
+            transform: rotate(15deg);
+            animation: float 8s ease-in-out infinite 2s;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0) rotate(-20deg); }
+            50% { transform: translateY(-20px) rotate(-20deg); }
+            100% { transform: translateY(0) rotate(-20deg); }
+        }
+        
+        .animal-section {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .animal-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M30,50 Q50,30 70,50 Q50,70 30,50" fill="none" stroke="%23ff8c0020" stroke-width="1"/></svg>');
+            background-size: 100px 100px;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .pet-icon {
+            font-size: 24px;
+            margin-right: 8px;
+            color: var(--secondary-color);
+        }
+
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .left-sidebar {
+                width: 30%;
+            }
+            
+            .center-content {
+                width: 70%;
+            }
+            
+            .right-sidebar {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-top {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .logo-container {
+                justify-content: center;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            
+            .search-box {
+                margin: 10px 0;
+                max-width: 100%;
+            }
+            
+            .contact-info {
+                text-align: center;
+            }
+            
+            nav.main-menu ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .left-sidebar, .center-content {
+                width: 100%;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .chatbot {
+                width: 300px;
+                right: 15px;
+            }
+            
+            .chatbot-trigger {
+                right: 85px;
+            }
+            
+            .whatsapp-btn {
+                right: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-image-container {
+                height: 150px;
+            }
+            
+            .chatbot {
+                width: calc(100% - 30px);
+            }
+            
+            .chatbot-trigger, .whatsapp-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+            
+            .chatbot-trigger {
+                right: 70px;
+                bottom: 25px;
+            }
+            
+            .whatsapp-btn {
+                bottom: 25px;
+            }
+        }
+
+        /* Animação de loading */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: var(--white);
+            animation: spin 1s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="animal-theme">
+    <!-- Marcas de patinhas decorativas -->
+    <div class="animal-paw paw-1">🐾</div>
+    <div class="animal-paw paw-2">🐾</div>
+    
+    <div class="container">
+        <!-- Cabeçalho -->
+        <header>
+            <div class="header-top">
+                <div class="logo-container">
+                    <div>
+                        <div class="logo">IMPERIAL</div>
+                        <div class="logo-tagline">Alimentos de qualidade para você e seu pet</div>
+                    </div>
+                </div>
+                <div class="search-box">
+                    <input type="text" placeholder="BUSCAR PRODUTOS...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="contact-info">
+                    <p>ATENDIMENTO IMPERIAL</p>
+                    <p><i class="fas fa-phone"></i> (74) 3612-7079</p>
+                    <p><i class="fas fa-phone"></i> (74) 3612-5266</p>
+                    <p><i class="fas fa-map-marker-alt"></i> JUAZEIRO-BA</p>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Menu de navegação -->
+        <nav class="main-menu">
+            <div class="container menu-container">
+                <ul>
+                    <li><a href="#"><i class="fas fa-home"></i> Principal</a></li>
+                    <li><a href="#"><i class="fas fa-truck"></i> Entregas</a></li>
+                    <li><a href="#"><i class="fas fa-paw pet-icon"></i> Pet Shop</a></li>
+                    <li><a href="#"><i class="fas fa-info-circle"></i> Sobre Nós</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> Contato</a></li>
+                    <li><a href="#"><i class="fas fa-percent"></i> Ofertas</a></li>
+                </ul>
+                <a href="#" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">3</span>
+                </a>
+            </div>
+        </nav>
+        
+        <!-- Banner promocional -->
+        <div class="promo-banner animal-section">
+            <h3>PROMOÇÃO ESPECIAL PARA SEU PET!</h3>
+            <p>20% OFF em toda linha de rações premium até o final do mês</p>
+            <button class="btn btn-outline">Saiba Mais</button>
+        </div>
+        
+        <!-- Conteúdo principal -->
+        <div class="main-content">
+            <!-- Sidebar esquerda -->
+            <div class="left-sidebar">
+                <div class="sidebar-block animal-section">
+                    <div class="sidebar-title"><i class="fas fa-bars"></i> Categorias</div>
+                    <ul class="sidebar-list">
+                        <li><a href="#"><i class="fas fa-cube"></i> AÇÚCAR</a></li>
+                        <li><a href="#"><i class="fas fa-dove"></i> ALIMENTO PARA PÁSSAROS</a></li>
+                        <li><a href="#"><i class="fas fa-utensils"></i> ARROZ PARBOILIZADO</a></li>
+                        <li><a href="#"><i class="fas fa-seedling"></i> DERIVADOS DE MILHO</a></li>
+                        <li><a href="#"><i class="fas fa-bread-slice"></i> FARINHA DE MANDIOCA</a></li>
+                        <li><a href="#"><i class="fas fa-paw pet-icon"></i> RAÇÃO ANIMAL</a></li>
+                        <li><a href="#"><i class="fas fa-soap"></i> LINHA HIGIENE</a></li>
+                        <li><a href="#"><i class="fas fa-pepper-hot"></i> TEMPEROS</a></li>
+                        <li><a href="#"><i class="fas fa-seedling"></i> FEIJÃO</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-block">
+                    <div class="sidebar-title"><i class="fas fa-star"></i> Mais Vendidos</div>
+                    <ul class="sidebar-list">
+                        <li><a href="#"><i class="fas fa-seedling"></i> Feijão Imperial</a></li>
+                        <li><a href="#"><i class="fas fa-utensils"></i> Arroz Parboilizado</a></li>
+                        <li><a href="#"><i class="fas fa-paw pet-icon"></i> Ração Canina</a></li>
+                        <li><a href="#"><i class="fas fa-cube"></i> Açúcar Cristal</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-block animal-section">
+                    <div class="sidebar-title"><i class="fas fa-envelope"></i> Newsletter</div>
+                    <form class="newsletter-form">
+                        <input type="text" placeholder="Seu nome:" required>
+                        <input type="email" placeholder="Seu email:" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i> CADASTRAR</button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Conteúdo central -->
+            <div class="center-content">
+                <div class="section-block animal-section">
+                    <h2 class="section-title"><i class="fas fa-fire"></i> Produtos em destaque</h2>
+                    <div class="products-grid">
+                        <div class="product-item">
+                            <div class="product-image-container">
+                                <img src="https://via.placeholder.com/200x150?text=Arroz+Imperial" alt="Arroz Imperial" class="product-image lazyload">
+                                <div class="product-badge">-15%</div>
+                                <div class="product-actions">
+                                    <button class="product-action-btn"><i class="fas fa-heart"></i></button>
+                                    <button class="product-action-btn"><i class="fas fa-shopping-cart"></i></button>
+                                    <button class="product-action-btn"><i class="fas fa-eye"></i></button>
+                                </div>
+                            </div>
+                            <div class="product-name">Arroz Imperial Parboilizado</div>
+                            <span class="product-price">R$ 12,99</span>
+                            <span class="product-old-price">R$ 15,30</span>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-image-container">
+                                <img src="https://via.placeholder.com/200x150?text=Papel+Higienico" alt="Papel Higiênico" class="product-image lazyload">
+                                <div class="product-actions">
+                                    <button class="product-action-btn"><i class="fas fa-heart"></i></button>
+                                    <button class="product-action-btn"><i class="fas fa-shopping-cart"></i></button>
+                                    <button class="product-action-btn"><i class="fas fa-eye"></i></button>
+                                </div>
+                            </div>
+                            <div class="product-name">Papel Higiênico Imperial</div>
+                            <span class="product-price">R$ 8,50</span>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-image-container">
+                                <img src="https://via.placeholder.com/200x150?text=Açúcar+Cristal" alt="Açúcar Cristal" class="product-image lazyload">
+                                <div class="product-badge">LANÇAMENTO</div>
+                                <div class="product-actions">
+                                    <button class="product-action-btn"><i class="fas fa-heart"></i></button>
+                                    <button class="product-action-btn"><i class="fas fa-shopping-cart"></i></button>
+                                    <button class="product-action-btn"><i class="fas fa-eye"></i></button>
+                                </div>
+                            </div>
+                            <div class="product-name">Açúcar Cristal Imperial</div>
+                            <span class="product-price">R$ 7,80</span>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-image-container">
+                                <img src="https://via.placeholder.com/200x150?text=Feijão+Imperial" alt="Feijão Imperial" class="product-image lazyload">
+                                <div class="product-actions">
+                                    <button class="product-action-btn"><i class="fas fa-heart"></i></button>
+                                    <button class="product-action-btn"><i class="fas fa-shopping-cart"></i></button>
+                                    <button class="product-action-btn"><i class="fas fa-eye"></i></button>
+                                </div>
+                            </div>
+                            <div class="product-name">Feijão Imperial Pérola</div>
+                            <span class="product-price">R$ 9,90</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section-block animal-section">
+                    <h2 class="section-title"><i class="fas fa-paw pet-icon"></i> Produtos para Animais</h2>
+                    <div class="products-grid">
+                        <div class="product-item">
+                            <div class="product-image-container">
+                                <img src="https://via.placeholder.com/200x150?text=Ração+Canina" alt="Ração Canina" class="product-image lazyload">
+                                <div class="product-badge">-20%</div>
+                                <div class="product-actions">
+                                    <button class="product-action-btn"><i class="fas fa-heart"></i></button>
+                                    <button class="product-action-btn"><i class="fas fa-shopping-cart"></i></button>
+                                    <button class="product-action-btn"><i class="fas fa-eye"></i></button>
+                                </div>
+                            </div>
+                            <div class="product-name">Ração Canina Premium</div>
+                            <span class="product-price">R$ 45,90</span>
+                            <span class="product-old-price">R$ 57,40</span>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-image-container">
+                                <img src="https://via.placeholder.com/200x150?text=Ração+Felina" alt="Ração Felina" class="product-image lazyload">
+                                <div class="product-actions">
+                                    <button class="product-action-btn"><i class="fas fa-heart"></i></button>
+                                    <button class="product-action-btn"><i class="fas fa-shopping-cart"></i></button>
+                                    <button class="product-action-btn"><i class="fas fa-eye"></i></button>
+                                </div>
+                            </div>
+                            <div class="product-name">Ração Felina Light</div>
+                            <span class="product-price">R$ 39,90</span>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-image-container">
+                                <img src="https://via.placeholder.com/200x150?text=Alpiste" alt="Alpiste" class="product-image lazyload">
+                                <div class="product-actions">
+                                    <button class="product-action-btn"><i class="fas fa-heart"></i></button>
+                                    <button class="product-action-btn"><i class="fas fa-shopping-cart"></i></button>
+                                    <button class="product-action-btn"><i class="fas fa-eye"></i></button>
+                                </div>
+                            </div>
+                            <div class="product-name">Alpiste Especial</div>
+                            <span class="product-price">R$ 12,50</span>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-image-container">
+                                <img src="https://via.placeholder.com/200x150?text=Petiscos" alt="Petiscos" class="product-image lazyload">
+                                <div class="product-badge">NOVO</div>
+                                <div class="product-actions">
+                                    <button class="product-action-btn"><i class="fas fa-heart"></i></button>
+                                    <button class="product-action-btn"><i class="fas fa-shopping-cart"></i></button>
+                                    <button class="product-action-btn"><i class="fas fa-eye"></i></button>
+                                </div>
+                            </div>
+                            <div class="product-name">Petiscos para Cães</div>
+                            <span class="product-price">R$ 18,90</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Rodapé -->
+        <footer>
+            <div class="footer-divider-red"></div>
+            <p class="footer-company">IMPERIAL Alimentos do Nordeste Ltda</p>
+            <p class="footer-address">Quadra CIMM, 14 - Distrito Industrial - Juazeiro-BA</p>
+            
+            <div class="footer-links">
+                <a href="#">Sobre Nós</a>
+                <a href="#">Produtos</a>
+                <a href="#">Contato</a>
+                <a href="#">Termos de Serviço</a>
+                <a href="#">Política de Privacidade</a>
+            </div>
+            
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            
+            <div class="footer-divider-yellow"></div>
+            <p class="footer-copyright">FaciliteWeb.com © 2005 - Todos os Direitos Reservados. | Desenvolvido com ❤️ para animais e humanos</p>
+        </footer>
+    </div>
+    
+    <!-- Botão do WhatsApp -->
+    <a href="https://wa.me/557436127079" class="whatsapp-btn" target="_blank" aria-label="Chat no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <!-- Atendente Virtual -->
+    <div class="chatbot-trigger" id="chatbotTrigger" aria-label="Abrir atendente virtual">
+        <i class="fas fa-comment-dots"></i>
+    </div>
+    
+    <div class="chatbot" id="chatbot">
+        <div class="chatbot-header">
+            <h3><i class="fas fa-robot"></i> Atendente Virtual</h3>
+            <button class="chatbot-close" id="chatbotClose" aria-label="Fechar atendente">&times;</button>
+        </div>
+        <div class="chatbot-body" id="chatbotBody">
+            <div class="chatbot-message bot-message">
+                <div class="message-time">10:30</div>
+                <div class="message-bubble">Olá! Sou o assistente virtual da Imperial Alimentos. Como posso ajudar você hoje?</div>
+            </div>
+            <div class="chatbot-message bot-message">
+                <div class="message-time">10:30</div>
+                <div class="message-bubble">Você pode me perguntar sobre produtos, promoções ou nosso horário de funcionamento.</div>
+            </div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" placeholder="Digite sua mensagem..." id="chatbotInput" aria-label="Digite sua mensagem">
+            <button id="chatbotSend" aria-label="Enviar mensagem"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+    
+    <script>
+        // Chatbot functionality
+        document.addEventListener("DOMContentLoaded", function() {
+            const chatbotTrigger = document.getElementById('chatbotTrigger');
+            const chatbotClose = document.getElementById('chatbotClose');
+            const chatbot = document.getElementById('chatbot');
+            const chatbotBody = document.getElementById('chatbotBody');
+            const chatbotInput = document.getElementById('chatbotInput');
+            const chatbotSend = document.getElementById('chatbotSend');
+            
+            // Open chatbot
+            chatbotTrigger.addEventListener('click', () => {
+                chatbot.classList.add('active');
+                chatbotInput.focus();
+            });
+            
+            // Close chatbot
+            chatbotClose.addEventListener('click', () => {
+                chatbot.classList.remove('active');
+            });
+            
+            // Send message
+            function sendMessage() {
+                const message = chatbotInput.value.trim();
+                if (message) {
+                    // Add user message
+                    addMessage(message, 'user');
+                    chatbotInput.value = '';
+                    
+                    // Show typing indicator
+                    const typingIndicator = document.createElement('div');
+                    typingIndicator.className = 'chatbot-message bot-message';
+                    typingIndicator.innerHTML = `
+                        <div class="message-time">${getCurrentTime()}</div>
+                        <div class="message-bubble"><span class="loading"></span></div>
+                    `;
+                    chatbotBody.appendChild(typingIndicator);
+                    chatbotBody.scrollTop = chatbotBody.scrollHeight;
+                    
+                    // Simulate bot response after delay
+                    setTimeout(() => {
+                        // Remove typing indicator
+                        chatbotBody.removeChild(typingIndicator);
+                        
+                        // Add bot response
+                        const responses = [
+                            "Entendi sua dúvida. Posso te ajudar com informações sobre produtos, pedidos ou nosso horário de funcionamento.",
+                            "Temos uma variedade de produtos alimentícios e para animais. Gostaria de saber mais sobre algum específico?",
+                            "Para mais informações, você pode nos contatar pelo telefone (74) 3612-7079 ou pelo WhatsApp.",
+                            "Estamos disponíveis de Segunda a Sexta das 8:00 às 18:00 e Sábado das 8:00 às 12:00.",
+                            "Você pode cadastrar seu email no nosso Grupo de Notícias para receber promoções e novidades!",
+                            "Confira nossa seção de produtos para animais com 20% de desconto esta semana!"
+                        ];
+                        const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+                        addMessage(randomResponse, 'bot');
+                    }, 1500);
+                }
+            }
+            
+            // Add message to chat
+            function addMessage(text, sender) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `chatbot-message ${sender}-message`;
+                
+                const timeDiv = document.createElement('div');
+                timeDiv.className = 'message-time';
+                timeDiv.textContent = getCurrentTime();
+                
+                const bubbleDiv = document.createElement('div');
+                bubbleDiv.className = 'message-bubble';
+                bubbleDiv.textContent = text;
+                
+                messageDiv.appendChild(timeDiv);
+                messageDiv.appendChild(bubbleDiv);
+                
+                chatbotBody.appendChild(messageDiv);
+                chatbotBody.scrollTop = chatbotBody.scrollHeight;
+            }
+            
+            // Get current time in HH:MM format
+            function getCurrentTime() {
+                const now = new Date();
+                return now.getHours() + ':' + (now.getMinutes() < 10 ? '0' : '') + now.getMinutes();
+            }
+            
+            // Event listeners
+            chatbotSend.addEventListener('click', sendMessage);
+            chatbotInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') sendMessage();
+            });
+            
+            // Initialize lazy loading
+            if ('loading' in HTMLImageElement.prototype) {
+                const images = document.querySelectorAll('img[loading="lazy"]');
+                images.forEach(img => {
+                    img.loading = 'lazy';
+                });
+            } else {
+                // Fallback para browsers que não suportam loading=lazy
+                const script = document.createElement('script');
+                script.src = 'https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js';
+                document.body.appendChild(script);
+                script.onload = () => {
+                    lazyload();
+                };
+            }
+            
+            // Newsletter form validation
+            const newsletterForm = document.querySelector('.newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const nameInput = this.querySelector('input[type="text"]');
+                    const emailInput = this.querySelector('input[type="email"]');
+                    
+                    if (nameInput.value.trim() === '' || emailInput.value.trim() === '') {
+                        alert('Por favor, preencha todos os campos.');
+                        return;
+                    }
+                    
+                    if (!isValidEmail(emailInput.value)) {
+                        alert('Por favor, insira um email válido.');
+                        return;
+                    }
+                    
+                    // Simulate form submission
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.innerHTML;
+                    submitBtn.innerHTML = '<span class="loading"></span>';
+                    submitBtn.disabled = true;
+                    
+                    setTimeout(() => {
+                        submitBtn.innerHTML = '<i class="fas fa-check"></i> Cadastrado!';
+                        setTimeout(() => {
+                            submitBtn.innerHTML = originalText;
+                            submitBtn.disabled = false;
+                            this.reset();
+                        }, 2000);
+                    }, 1500);
+                });
+            }
+            
+            // Helper function to validate email
+            function isValidEmail(email) {
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            }
+        });
+    </script>
+</body>
+</html>
