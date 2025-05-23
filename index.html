@@ -3,71 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Imperial Alimentos - Alimentos de qualidade e produtos para animais em Juazeiro-BA. Compre arroz, feijão, açúcar e rações premium.">
-    <meta name="keywords" content="alimentos, ração, pet shop, Juazeiro, Bahia, comida para animais">
-    <meta property="og:title" content="Imperial Alimentos">
-    <meta property="og:type" content="website">
-    <title>Imperial Alimentos - Alimentos e Produtos para Animais</title>
+    <title>Imperial Alimentos - Alimentos Básicos de Qualidade</title>
+    <meta name="description" content="Imperial Alimentos - Os melhores alimentos básicos em Juazeiro-BA. Qualidade e tradição desde 2005.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
     <style>
         /* Variáveis CSS */
         :root {
-            --primary-color: #003366;
-            --secondary-color: #ff8c00;
-            --accent-color: #ff5500;
-            --whatsapp-color: #25D366;
-            --text-color: #333;
-            --light-bg: #fff9f0;
-            --white: #ffffff;
-            --gray-light: #f5f5f5;
-            --gray-medium: #ddd;
-            --gray-dark: #777;
-            --shadow-sm: 0 2px 8px rgba(0,0,0,0.1);
-            --shadow-md: 0 4px 12px rgba(0,0,0,0.15);
-            --transition: all 0.3s ease;
+            --primary: #2C3E50;
+            --secondary: #E74C3C;
+            --accent: #F39C12;
+            --light: #ECF0F1;
+            --dark: #1A252F;
+            --success: #27AE60;
+            --info: #3498DB;
+            --white: #FFFFFF;
+            --gray: #95A5A6;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.16);
+            --shadow-lg: 0 10px 20px rgba(0,0,0,0.1);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
         }
 
-        /* Reset e estilos gerais */
+        /* Reset e Base */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: var(--light-bg);
-            color: var(--text-color);
+            color: var(--dark);
+            background-color: var(--light);
             line-height: 1.6;
-            position: relative;
             overflow-x: hidden;
         }
-        
+
         h1, h2, h3, h4 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
         }
-        
+
         a {
             text-decoration: none;
-            color: var(--primary-color);
+            color: inherit;
             transition: var(--transition);
         }
-        
-        a:hover {
-            color: var(--secondary-color);
-        }
-        
-        ul {
-            list-style: none;
-        }
-        
+
         img {
             max-width: 100%;
             height: auto;
+            display: block;
         }
-        
+
+        ul {
+            list-style: none;
+        }
+
         .container {
             width: 100%;
             max-width: 1200px;
@@ -77,565 +73,880 @@
 
         /* Botões */
         .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            border-radius: var(--radius-sm);
             font-weight: 600;
-            text-align: center;
             cursor: pointer;
             transition: var(--transition);
             border: none;
+            gap: 8px;
         }
-        
+
         .btn-primary {
-            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            background-color: var(--secondary);
             color: var(--white);
         }
-        
+
         .btn-primary:hover {
+            background-color: #C0392B;
             transform: translateY(-2px);
             box-shadow: var(--shadow-md);
         }
-        
+
         .btn-outline {
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
+            border: 2px solid var(--primary);
+            color: var(--primary);
             background: transparent;
         }
-        
+
         .btn-outline:hover {
-            background-color: var(--primary-color);
+            background-color: var(--primary);
             color: var(--white);
+        }
+
+        .btn-icon {
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            border-radius: 50%;
         }
 
         /* Header */
-        header {
-            padding: 15px 0;
-            background: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 990;
-        }
-        
-        .header-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-        }
-        
-        .logo-container {
-            display: flex;
-            align-items: center;
-            flex: 1;
-            min-width: 250px;
-        }
-        
-        .logo {
-            font-size: 36px;
-            font-weight: bold;
-            color: var(--primary-color);
-            text-transform: uppercase;
-            position: relative;
-            display: inline-block;
-            font-family: 'Montserrat', sans-serif;
-        }
-        
-        .logo::after {
-            content: "";
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary-color), #FFCC00, #000);
-        }
-        
-        .logo-tagline {
-            font-size: 12px;
-            color: var(--gray-dark);
-            margin-left: 10px;
-            max-width: 100px;
-            line-height: 1.3;
-        }
-        
-        .search-box {
-            display: flex;
-            margin: 0 20px;
-            flex: 1;
-            max-width: 500px;
-            min-width: 200px;
-        }
-        
-        .search-box input {
-            padding: 10px 15px;
-            border: 2px solid var(--gray-medium);
-            border-radius: 30px 0 0 30px;
-            width: 100%;
-            outline: none;
-            transition: var(--transition);
-            font-family: inherit;
-        }
-        
-        .search-box input:focus {
-            border-color: var(--secondary-color);
-        }
-        
-        .search-box button {
-            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+        .top-bar {
+            background-color: var(--primary);
             color: var(--white);
-            border: none;
-            padding: 0 20px;
-            border-radius: 0 30px 30px 0;
-            cursor: pointer;
-            transition: var(--transition);
-            font-family: inherit;
-        }
-        
-        .search-box button:hover {
-            background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
-        }
-        
-        .contact-info {
-            text-align: right;
-            color: #330066;
+            padding: 8px 0;
             font-size: 14px;
-            min-width: 180px;
-        }
-        
-        .contact-info p:first-child {
-            font-weight: bold;
-            margin-bottom: 5px;
-            color: var(--primary-color);
-        }
-        
-        .contact-info i {
-            margin-right: 5px;
-            color: var(--secondary-color);
         }
 
-        /* Menu de navegação */
-        nav.main-menu {
-            background: linear-gradient(135deg, var(--primary-color), #0066cc);
-            padding: 12px 0;
-            position: relative;
-        }
-        
-        .menu-container {
+        .top-bar-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
-        nav.main-menu ul {
+
+        .social-links {
             display: flex;
-            gap: 25px;
+            gap: 12px;
         }
-        
-        nav.main-menu a {
+
+        .social-links a {
             color: var(--white);
-            font-weight: 500;
-            position: relative;
-            padding-bottom: 5px;
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            opacity: 1;
+            color: var(--accent);
+        }
+
+        .utility-links a {
+            color: var(--white);
+            margin-left: 20px;
+            font-size: 13px;
+        }
+
+        .utility-links a:hover {
+            color: var(--accent);
+        }
+
+        header.main-header {
+            background-color: var(--white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
             display: flex;
             align-items: center;
-            gap: 8px;
+            justify-content: space-between;
+            padding: 20px 0;
         }
-        
-        nav.main-menu a::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--secondary-color);
-            transition: width 0.3s ease;
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-        
-        nav.main-menu a:hover::after {
-            width: 100%;
+
+        .logo-img {
+            width: 50px;
+            height: 50px;
         }
-        
-        .cart-icon {
+
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 28px;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .logo-tagline {
+            font-size: 12px;
+            color: var(--gray);
+            margin-top: 3px;
+        }
+
+        .search-box {
+            flex: 1;
+            max-width: 500px;
+            margin: 0 30px;
             position: relative;
-            color: var(--white);
-            font-size: 20px;
         }
-        
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 20px;
+            border: 2px solid var(--light);
+            border-radius: var(--radius-lg);
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .search-box input:focus {
+            border-color: var(--accent);
+            outline: none;
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background-color: var(--accent);
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius-sm);
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .header-action {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 12px;
+            color: var(--primary);
+        }
+
+        .header-action i {
+            font-size: 22px;
+            margin-bottom: 5px;
+            color: var(--secondary);
+        }
+
         .cart-count {
             position: absolute;
             top: -8px;
             right: -8px;
-            background-color: var(--secondary-color);
+            background-color: var(--secondary);
             color: var(--white);
             border-radius: 50%;
-            width: 18px;
-            height: 18px;
-            font-size: 12px;
+            width: 20px;
+            height: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 12px;
         }
 
-        /* Layout de 3 colunas */
-        .main-content {
+        /* Navegação */
+        nav.main-nav {
+            background-color: var(--primary);
+        }
+
+        .nav-container {
             display: flex;
-            margin: 30px 0;
-            gap: 20px;
-        }
-        
-        .left-sidebar {
-            width: 25%;
-        }
-        
-        .center-content {
-            width: 50%;
-        }
-        
-        .right-sidebar {
-            width: 25%;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        /* Blocos de sidebar */
-        .sidebar-block {
+        .main-menu {
+            display: flex;
+        }
+
+        .main-menu > li {
+            position: relative;
+        }
+
+        .main-menu > li > a {
+            color: var(--white);
+            padding: 15px 20px;
+            display: block;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .main-menu > li:hover > a {
+            background-color: rgba(255,255,255,0.1);
+            color: var(--accent);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--white);
+            min-width: 220px;
+            box-shadow: var(--shadow-lg);
+            border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+            z-index: 100;
+        }
+
+        .main-menu > li:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu li a {
+            padding: 12px 20px;
+            display: block;
+            color: var(--dark);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .dropdown-menu li a:hover {
+            background-color: var(--light);
+            color: var(--secondary);
+            padding-left: 25px;
+        }
+
+        .dropdown-menu li:last-child a {
+            border-bottom: none;
+        }
+
+        .menu-highlight {
+            background-color: var(--accent);
+            border-radius: var(--radius-sm);
+            margin-left: 10px;
+        }
+
+        .menu-highlight a {
+            color: var(--white) !important;
+        }
+
+        .menu-highlight:hover {
+            background-color: #E67E22;
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
             margin-bottom: 30px;
-            background: var(--white);
-            border-radius: 10px;
-            overflow: hidden;
+            opacity: 0.9;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        /* Features */
+        .features {
+            padding: 60px 0;
+            background-color: var(--white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background-color: var(--white);
+            border-radius: var(--radius-md);
+            padding: 30px;
+            text-align: center;
             box-shadow: var(--shadow-sm);
             transition: var(--transition);
         }
-        
-        .sidebar-block:hover {
+
+        .feature-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-md);
         }
-        
-        .sidebar-title {
-            background: linear-gradient(135deg, var(--primary-color), #0066cc);
-            padding: 12px 15px;
-            font-weight: bold;
-            color: var(--white);
-            font-size: 16px;
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(231, 76, 60, 0.1);
+            border-radius: 50%;
             display: flex;
             align-items: center;
-            gap: 10px;
-        }
-        
-        .sidebar-title i {
-            font-size: 18px;
-        }
-        
-        .sidebar-list li {
-            padding: 12px 15px;
-            border-bottom: 1px solid var(--gray-medium);
-            transition: var(--transition);
-        }
-        
-        .sidebar-list li:hover {
-            background-color: var(--gray-light);
-            padding-left: 20px;
-        }
-        
-        .sidebar-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .sidebar-list a {
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--secondary);
+            font-size: 30px;
         }
 
-        /* Formulário newsletter */
-        .newsletter-form {
-            padding: 15px;
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
         }
-        
-        .newsletter-form input {
-            width: 100%;
-            padding: 10px 15px;
-            margin-bottom: 12px;
-            border: 1px solid var(--gray-medium);
-            border-radius: 5px;
-            outline: none;
+
+        .feature-card p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        /* Categorias */
+        .categories {
+            padding: 60px 0;
+            background-color: var(--light);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .section-header p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .category-card {
+            background-color: var(--white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
             transition: var(--transition);
-            font-family: inherit;
+            position: relative;
         }
-        
-        .newsletter-form input:focus {
-            border-color: var(--secondary-color);
-            box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.1);
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
         }
-        
-        .newsletter-form button {
-            background: linear-gradient(135deg, #ff3300, var(--accent-color));
-            color: var(--white);
-            border: none;
-            padding: 12px;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-            font-weight: bold;
-            transition: var(--transition);
-            font-family: inherit;
+
+        .category-img {
+            height: 150px;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
         }
-        
-        .newsletter-form button:hover {
-            background: linear-gradient(135deg, var(--accent-color), #ff3300);
-            transform: translateY(-2px);
+
+        .category-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .category-content h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .category-count {
+            color: var(--gray);
+            font-size: 14px;
         }
 
         /* Produtos */
-        .section-block {
-            background: var(--white);
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 30px;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
+        .products {
+            padding: 60px 0;
+            background-color: var(--white);
         }
-        
-        .section-block:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .section-title {
-            font-size: 20px;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--secondary-color);
-            color: var(--primary-color);
+
+        .products-filter {
             display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .section-title i {
-            color: var(--secondary-color);
-        }
-        
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-        }
-        
-        .product-item {
-            text-align: center;
-            transition: var(--transition);
-        }
-        
-        .product-item:hover {
-            transform: translateY(-5px);
-        }
-        
-        .product-image-container {
-            position: relative;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            overflow: hidden;
-            height: 180px;
-            background-color: var(--gray-light);
-            display: flex;
-            align-items: center;
             justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
         }
-        
-        .product-image {
-            max-height: 100%;
-            width: auto;
-            transition: var(--transition);
-        }
-        
-        .product-item:hover .product-image {
-            transform: scale(1.05);
-        }
-        
-        .product-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: var(--secondary-color);
-            color: var(--white);
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: bold;
-        }
-        
-        .product-actions {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            display: flex;
-            opacity: 0;
-            transition: var(--transition);
-            transform: translateY(10px);
-        }
-        
-        .product-item:hover .product-actions {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .product-action-btn {
-            flex: 1;
-            background-color: rgba(0,0,0,0.7);
-            color: var(--white);
-            border: none;
-            padding: 8px;
+
+        .filter-btn {
+            padding: 8px 20px;
+            border-radius: 30px;
+            background-color: transparent;
+            border: 1px solid var(--gray);
+            color: var(--dark);
             cursor: pointer;
             transition: var(--transition);
         }
-        
-        .product-action-btn:hover {
-            background-color: var(--secondary-color);
-        }
-        
-        .product-name {
-            font-size: 14px;
-            font-weight: 500;
-            color: var(--text-color);
-            margin-bottom: 5px;
-        }
-        
-        .product-price {
-            color: var(--accent-color);
-            font-weight: bold;
-            display: block;
-        }
-        
-        .product-old-price {
-            text-decoration: line-through;
-            color: var(--gray-dark);
-            font-size: 12px;
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+            color: var(--white);
         }
 
-        /* Banner promocional */
-        .promo-banner {
-            background: linear-gradient(135deg, var(--primary-color), #0066cc);
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--secondary);
             color: var(--white);
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            text-align: center;
+            padding: 5px 10px;
+            border-radius: var(--radius-sm);
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        .product-wishlist {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 35px;
+            height: 35px;
+            background-color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 1;
+        }
+
+        .product-wishlist:hover, .product-wishlist.active {
+            color: var(--secondary);
+        }
+
+        .product-img {
+            height: 200px;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             position: relative;
             overflow: hidden;
         }
-        
-        .promo-banner::before {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
-            animation: rotate 15s linear infinite;
+
+        .product-img img {
+            max-height: 80%;
+            transition: var(--transition);
         }
-        
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.05);
         }
-        
-        .promo-banner h3 {
+
+        .product-content {
+            padding: 20px;
+        }
+
+        .product-category {
+            color: var(--gray);
+            font-size: 12px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .product-title {
+            font-size: 16px;
             margin-bottom: 10px;
-            position: relative;
+            font-weight: 600;
         }
-        
-        .promo-banner p {
+
+        .product-rating {
+            color: var(--accent);
             margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .product-price {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .current-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .old-price {
+            font-size: 14px;
+            color: var(--gray);
+            text-decoration: line-through;
+        }
+
+        .product-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .product-btn:hover {
+            background-color: var(--secondary);
+        }
+
+        /* Banner Promo */
+        .promo-banner {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: var(--white);
+            padding: 50px 0;
+            margin: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .promo-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 1;
+        }
+
+        .promo-text {
+            max-width: 600px;
+        }
+
+        .promo-text h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .promo-text p {
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .promo-img {
+            width: 300px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .promo-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* Testemunhos */
+        .testimonials {
+            padding: 60px 0;
+            background-color: var(--light);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .testimonial-card {
+            background-color: var(--white);
+            border-radius: var(--radius-md);
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
             position: relative;
         }
 
-        /* Rodapé */
-        footer {
-            margin-top: 50px;
-            text-align: center;
-            font-size: 14px;
-            background: var(--primary-color);
-            color: var(--white);
-            padding: 30px 0 20px;
-            position: relative;
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 60px;
+            color: rgba(231, 76, 60, 0.1);
+            font-family: serif;
+            line-height: 1;
         }
-        
-        .footer-divider-red {
-            height: 5px;
-            background: linear-gradient(90deg, #ff3300, var(--secondary-color));
+
+        .testimonial-content {
             margin-bottom: 20px;
+            font-style: italic;
+            color: var(--dark);
+            position: relative;
+            z-index: 1;
         }
-        
-        .footer-divider-yellow {
-            height: 2px;
-            background: linear-gradient(90deg, #FFCC00, var(--secondary-color));
-            margin: 20px auto;
-            width: 80%;
-            opacity: 0.5;
-        }
-        
-        .footer-company {
-            font-weight: bold;
-            color: var(--secondary-color);
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-        
-        .footer-address {
-            color: #ccc;
-            margin: 5px 0;
-        }
-        
-        .footer-links {
+
+        .testimonial-author {
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin: 15px 0;
+            align-items: center;
+            gap: 15px;
         }
-        
-        .footer-links a {
+
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #f5f5f5;
+            overflow: hidden;
+        }
+
+        .author-info h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            padding: 60px 0;
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1556909212-d5b604d0c90d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
             color: var(--white);
+            text-align: center;
         }
-        
-        .footer-links a:hover {
-            color: var(--secondary-color);
+
+        .newsletter h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
         }
-        
+
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            background-color: var(--white);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            outline: none;
+        }
+
+        .newsletter-form button {
+            background-color: var(--accent);
+            color: var(--white);
+            border: none;
+            padding: 0 25px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter-form button:hover {
+            background-color: #E67E22;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 60px 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .footer-about p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+            font-size: 14px;
+        }
+
         .footer-social {
             display: flex;
-            justify-content: center;
             gap: 15px;
-            margin: 15px 0;
         }
-        
+
         .footer-social a {
-            color: var(--white);
-            font-size: 20px;
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: rgba(255,255,255,0.1);
+            background-color: rgba(255,255,255,0.1);
             display: flex;
             align-items: center;
             justify-content: center;
             transition: var(--transition);
         }
-        
+
         .footer-social a:hover {
-            background: var(--secondary-color);
+            background-color: var(--accent);
             transform: translateY(-3px);
         }
-        
-        .footer-copyright {
-            color: #aaa;
-            font-size: 12px;
+
+        .footer-title {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            opacity: 0.8;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .footer-contact li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .footer-contact i {
+            color: var(--accent);
+            margin-top: 3px;
+        }
+
+        .footer-bottom {
+            background-color: rgba(0,0,0,0.2);
+            padding: 20px 0;
+            text-align: center;
+            font-size: 14px;
+            opacity: 0.8;
         }
 
         /* Botão do WhatsApp */
@@ -643,7 +954,7 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background-color: var(--whatsapp-color);
+            background-color: #25D366;
             color: var(--white);
             width: 60px;
             height: 60px;
@@ -669,741 +980,639 @@
             100% { transform: scale(1); }
         }
 
-        /* Atendente Virtual */
-        .chatbot {
-            position: fixed;
-            bottom: 100px;
-            right: 30px;
-            width: 350px;
-            background: var(--white);
-            border-radius: 15px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
-            z-index: 998;
-            overflow: hidden;
-            display: none;
-            transform: translateY(20px);
-            opacity: 0;
-            transition: var(--transition);
-        }
-        
-        .chatbot.active {
-            display: block;
-            transform: translateY(0);
-            opacity: 1;
-        }
-        
-        .chatbot-header {
-            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
-            color: var(--white);
-            padding: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        
-        .chatbot-header h3 {
-            font-size: 18px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .chatbot-close {
-            background: none;
-            border: none;
-            color: var(--white);
-            font-size: 20px;
-            cursor: pointer;
-        }
-        
-        .chatbot-body {
-            padding: 15px;
-            height: 300px;
-            overflow-y: auto;
-            background-color: var(--gray-light);
-        }
-        
-        .chatbot-message {
-            margin-bottom: 15px;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .bot-message {
-            align-items: flex-start;
-        }
-        
-        .user-message {
-            align-items: flex-end;
-        }
-        
-        .message-time {
-            font-size: 11px;
-            color: var(--gray-dark);
-            margin-bottom: 3px;
-        }
-        
-        .message-bubble {
-            max-width: 80%;
-            padding: 10px 15px;
-            border-radius: 18px;
-            margin-top: 5px;
-            font-size: 14px;
-        }
-        
-        .bot-message .message-bubble {
-            background: var(--white);
-            border-top-left-radius: 5px;
-            box-shadow: var(--shadow-sm);
-        }
-        
-        .user-message .message-bubble {
-            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
-            color: var(--white);
-            border-top-right-radius: 5px;
-        }
-        
-        .chatbot-input {
-            display: flex;
-            padding: 10px;
-            border-top: 1px solid var(--gray-medium);
-            background-color: var(--white);
-        }
-        
-        .chatbot-input input {
-            flex: 1;
-            padding: 10px;
-            border: 1px solid var(--gray-medium);
-            border-radius: 20px;
-            outline: none;
-            font-family: inherit;
-        }
-        
-        .chatbot-input button {
-            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
-            color: var(--white);
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin-left: 10px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        .chatbot-input button:hover {
-            transform: scale(1.05);
-        }
-        
-        .chatbot-trigger {
-            position: fixed;
-            bottom: 30px;
-            right: 100px;
-            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
-            color: var(--white);
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 25px;
-            box-shadow: 0 4px 12px rgba(255, 140, 0, 0.3);
-            z-index: 999;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        .chatbot-trigger:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 16px rgba(255, 140, 0, 0.4);
-        }
-
-        /* Elementos Animalistas */
-        .animal-paw {
-            position: absolute;
-            opacity: 0.05;
-            z-index: -1;
-            pointer-events: none;
-        }
-        
-        .paw-1 {
-            top: 10%;
-            left: 5%;
-            font-size: 100px;
-            transform: rotate(-20deg);
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        .paw-2 {
-            bottom: 15%;
-            right: 8%;
-            font-size: 80px;
-            transform: rotate(15deg);
-            animation: float 8s ease-in-out infinite 2s;
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(0) rotate(-20deg); }
-            50% { transform: translateY(-20px) rotate(-20deg); }
-            100% { transform: translateY(0) rotate(-20deg); }
-        }
-        
-        .animal-section {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .animal-section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M30,50 Q50,30 70,50 Q50,70 30,50" fill="none" stroke="%23ff8c0020" stroke-width="1"/></svg>');
-            background-size: 100px 100px;
-            opacity: 0.1;
-            z-index: -1;
-        }
-        
-        .pet-icon {
-            font-size: 24px;
-            margin-right: 8px;
-            color: var(--secondary-color);
-        }
-
         /* Responsividade */
         @media (max-width: 992px) {
-            .products-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            
-            .left-sidebar {
-                width: 30%;
-            }
-            
-            .center-content {
-                width: 70%;
-            }
-            
-            .right-sidebar {
-                display: none;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .header-top {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .logo-container {
-                justify-content: center;
-                text-align: center;
-                margin-bottom: 10px;
+            .header-content {
+                flex-wrap: wrap;
+                gap: 20px;
             }
             
             .search-box {
-                margin: 10px 0;
-                max-width: 100%;
+                order: 3;
+                flex: 1 1 100%;
+                margin: 0;
             }
             
-            .contact-info {
+            .promo-content {
+                flex-direction: column;
                 text-align: center;
             }
             
-            nav.main-menu ul {
-                gap: 15px;
+            .promo-img {
+                margin-top: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .main-menu {
                 flex-wrap: wrap;
                 justify-content: center;
             }
             
-            .main-content {
+            .newsletter-form {
                 flex-direction: column;
+                background-color: transparent;
+                gap: 10px;
             }
             
-            .left-sidebar, .center-content {
+            .newsletter-form input, .newsletter-form button {
                 width: 100%;
-            }
-            
-            .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .chatbot {
-                width: 300px;
-                right: 15px;
-            }
-            
-            .chatbot-trigger {
-                right: 85px;
-            }
-            
-            .whatsapp-btn {
-                right: 15px;
+                border-radius: var(--radius-sm);
             }
         }
-        
-        @media (max-width: 480px) {
+
+        @media (max-width: 576px) {
+            .top-bar-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .utility-links a {
+                margin: 0 10px;
+            }
+            
+            .section-header h2 {
+                font-size: 28px;
+            }
+            
             .products-grid {
                 grid-template-columns: 1fr;
             }
             
-            .product-image-container {
-                height: 150px;
+            .footer-content {
+                grid-template-columns: 1fr;
             }
-            
-            .chatbot {
-                width: calc(100% - 30px);
-            }
-            
-            .chatbot-trigger, .whatsapp-btn {
-                width: 50px;
-                height: 50px;
-                font-size: 20px;
-            }
-            
-            .chatbot-trigger {
-                right: 70px;
-                bottom: 25px;
-            }
-            
-            .whatsapp-btn {
-                bottom: 25px;
-            }
-        }
-
-        /* Animação de loading */
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .loading {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(255,255,255,0.3);
-            border-radius: 50%;
-            border-top-color: var(--white);
-            animation: spin 1s ease-in-out infinite;
         }
     </style>
 </head>
-<body class="animal-theme">
-    <!-- Marcas de patinhas decorativas -->
-    <div class="animal-paw paw-1">🐾</div>
-    <div class="animal-paw paw-2">🐾</div>
-    
-    <div class="container">
-        <!-- Cabeçalho -->
-        <header>
-            <div class="header-top">
-                <div class="logo-container">
-                    <div>
-                        <div class="logo">IMPERIAL</div>
-                        <div class="logo-tagline">Alimentos de qualidade para você e seu pet</div>
-                    </div>
-                </div>
-                <div class="search-box">
-                    <input type="text" placeholder="BUSCAR PRODUTOS...">
-                    <button><i class="fas fa-search"></i></button>
-                </div>
-                <div class="contact-info">
-                    <p>ATENDIMENTO IMPERIAL</p>
-                    <p><i class="fas fa-phone"></i> (74) 3612-7079</p>
-                    <p><i class="fas fa-phone"></i> (74) 3612-5266</p>
-                    <p><i class="fas fa-map-marker-alt"></i> JUAZEIRO-BA</p>
-                </div>
-            </div>
-        </header>
-        
-        <!-- Menu de navegação -->
-        <nav class="main-menu">
-            <div class="container menu-container">
-                <ul>
-                    <li><a href="#"><i class="fas fa-home"></i> Principal</a></li>
-                    <li><a href="#"><i class="fas fa-truck"></i> Entregas</a></li>
-                    <li><a href="#"><i class="fas fa-paw pet-icon"></i> Pet Shop</a></li>
-                    <li><a href="#"><i class="fas fa-info-circle"></i> Sobre Nós</a></li>
-                    <li><a href="#"><i class="fas fa-envelope"></i> Contato</a></li>
-                    <li><a href="#"><i class="fas fa-percent"></i> Ofertas</a></li>
-                </ul>
-                <a href="#" class="cart-icon">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-count">3</span>
-                </a>
-            </div>
-        </nav>
-        
-        <!-- Banner promocional -->
-        <div class="promo-banner animal-section">
-            <h3>PROMOÇÃO ESPECIAL PARA SEU PET!</h3>
-            <p>20% OFF em toda linha de rações premium até o final do mês</p>
-            <button class="btn btn-outline">Saiba Mais</button>
-        </div>
-        
-        <!-- Conteúdo principal -->
-        <div class="main-content">
-            <!-- Sidebar esquerda -->
-            <div class="left-sidebar">
-                <div class="sidebar-block animal-section">
-                    <div class="sidebar-title"><i class="fas fa-bars"></i> Categorias</div>
-                    <ul class="sidebar-list">
-                        <li><a href="#"><i class="fas fa-cube"></i> AÇÚCAR</a></li>
-                        <li><a href="#"><i class="fas fa-dove"></i> ALIMENTO PARA PÁSSAROS</a></li>
-                        <li><a href="#"><i class="fas fa-utensils"></i> ARROZ PARBOILIZADO</a></li>
-                        <li><a href="#"><i class="fas fa-seedling"></i> DERIVADOS DE MILHO</a></li>
-                        <li><a href="#"><i class="fas fa-bread-slice"></i> FARINHA DE MANDIOCA</a></li>
-                        <li><a href="#"><i class="fas fa-paw pet-icon"></i> RAÇÃO ANIMAL</a></li>
-                        <li><a href="#"><i class="fas fa-soap"></i> LINHA HIGIENE</a></li>
-                        <li><a href="#"><i class="fas fa-pepper-hot"></i> TEMPEROS</a></li>
-                        <li><a href="#"><i class="fas fa-seedling"></i> FEIJÃO</a></li>
-                    </ul>
-                </div>
-                
-                <div class="sidebar-block">
-                    <div class="sidebar-title"><i class="fas fa-star"></i> Mais Vendidos</div>
-                    <ul class="sidebar-list">
-                        <li><a href="#"><i class="fas fa-seedling"></i> Feijão Imperial</a></li>
-                        <li><a href="#"><i class="fas fa-utensils"></i> Arroz Parboilizado</a></li>
-                        <li><a href="#"><i class="fas fa-paw pet-icon"></i> Ração Canina</a></li>
-                        <li><a href="#"><i class="fas fa-cube"></i> Açúcar Cristal</a></li>
-                    </ul>
-                </div>
-                
-                <div class="sidebar-block animal-section">
-                    <div class="sidebar-title"><i class="fas fa-envelope"></i> Newsletter</div>
-                    <form class="newsletter-form">
-                        <input type="text" placeholder="Seu nome:" required>
-                        <input type="email" placeholder="Seu email:" required>
-                        <button type="submit"><i class="fas fa-paper-plane"></i> CADASTRAR</button>
-                    </form>
-                </div>
-            </div>
-            
-            <!-- Conteúdo central -->
-            <div class="center-content">
-                <div class="section-block animal-section">
-                    <h2 class="section-title"><i class="fas fa-fire"></i> Produtos em destaque</h2>
-                    <div class="products-grid">
-                        <div class="product-item">
-                            <div class="product-image-container">
-                                <img src="https://via.placeholder.com/200x150?text=Arroz+Imperial" alt="Arroz Imperial" class="product-image lazyload">
-                                <div class="product-badge">-15%</div>
-                                <div class="product-actions">
-                                    <button class="product-action-btn"><i class="fas fa-heart"></i></button>
-                                    <button class="product-action-btn"><i class="fas fa-shopping-cart"></i></button>
-                                    <button class="product-action-btn"><i class="fas fa-eye"></i></button>
-                                </div>
-                            </div>
-                            <div class="product-name">Arroz Imperial Parboilizado</div>
-                            <span class="product-price">R$ 12,99</span>
-                            <span class="product-old-price">R$ 15,30</span>
-                        </div>
-                        <div class="product-item">
-                            <div class="product-image-container">
-                                <img src="https://via.placeholder.com/200x150?text=Papel+Higienico" alt="Papel Higiênico" class="product-image lazyload">
-                                <div class="product-actions">
-                                    <button class="product-action-btn"><i class="fas fa-heart"></i></button>
-                                    <button class="product-action-btn"><i class="fas fa-shopping-cart"></i></button>
-                                    <button class="product-action-btn"><i class="fas fa-eye"></i></button>
-                                </div>
-                            </div>
-                            <div class="product-name">Papel Higiênico Imperial</div>
-                            <span class="product-price">R$ 8,50</span>
-                        </div>
-                        <div class="product-item">
-                            <div class="product-image-container">
-                                <img src="https://via.placeholder.com/200x150?text=Açúcar+Cristal" alt="Açúcar Cristal" class="product-image lazyload">
-                                <div class="product-badge">LANÇAMENTO</div>
-                                <div class="product-actions">
-                                    <button class="product-action-btn"><i class="fas fa-heart"></i></button>
-                                    <button class="product-action-btn"><i class="fas fa-shopping-cart"></i></button>
-                                    <button class="product-action-btn"><i class="fas fa-eye"></i></button>
-                                </div>
-                            </div>
-                            <div class="product-name">Açúcar Cristal Imperial</div>
-                            <span class="product-price">R$ 7,80</span>
-                        </div>
-                        <div class="product-item">
-                            <div class="product-image-container">
-                                <img src="https://via.placeholder.com/200x150?text=Feijão+Imperial" alt="Feijão Imperial" class="product-image lazyload">
-                                <div class="product-actions">
-                                    <button class="product-action-btn"><i class="fas fa-heart"></i></button>
-                                    <button class="product-action-btn"><i class="fas fa-shopping-cart"></i></button>
-                                    <button class="product-action-btn"><i class="fas fa-eye"></i></button>
-                                </div>
-                            </div>
-                            <div class="product-name">Feijão Imperial Pérola</div>
-                            <span class="product-price">R$ 9,90</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="section-block animal-section">
-                    <h2 class="section-title"><i class="fas fa-paw pet-icon"></i> Produtos para Animais</h2>
-                    <div class="products-grid">
-                        <div class="product-item">
-                            <div class="product-image-container">
-                                <img src="https://via.placeholder.com/200x150?text=Ração+Canina" alt="Ração Canina" class="product-image lazyload">
-                                <div class="product-badge">-20%</div>
-                                <div class="product-actions">
-                                    <button class="product-action-btn"><i class="fas fa-heart"></i></button>
-                                    <button class="product-action-btn"><i class="fas fa-shopping-cart"></i></button>
-                                    <button class="product-action-btn"><i class="fas fa-eye"></i></button>
-                                </div>
-                            </div>
-                            <div class="product-name">Ração Canina Premium</div>
-                            <span class="product-price">R$ 45,90</span>
-                            <span class="product-old-price">R$ 57,40</span>
-                        </div>
-                        <div class="product-item">
-                            <div class="product-image-container">
-                                <img src="https://via.placeholder.com/200x150?text=Ração+Felina" alt="Ração Felina" class="product-image lazyload">
-                                <div class="product-actions">
-                                    <button class="product-action-btn"><i class="fas fa-heart"></i></button>
-                                    <button class="product-action-btn"><i class="fas fa-shopping-cart"></i></button>
-                                    <button class="product-action-btn"><i class="fas fa-eye"></i></button>
-                                </div>
-                            </div>
-                            <div class="product-name">Ração Felina Light</div>
-                            <span class="product-price">R$ 39,90</span>
-                        </div>
-                        <div class="product-item">
-                            <div class="product-image-container">
-                                <img src="https://via.placeholder.com/200x150?text=Alpiste" alt="Alpiste" class="product-image lazyload">
-                                <div class="product-actions">
-                                    <button class="product-action-btn"><i class="fas fa-heart"></i></button>
-                                    <button class="product-action-btn"><i class="fas fa-shopping-cart"></i></button>
-                                    <button class="product-action-btn"><i class="fas fa-eye"></i></button>
-                                </div>
-                            </div>
-                            <div class="product-name">Alpiste Especial</div>
-                            <span class="product-price">R$ 12,50</span>
-                        </div>
-                        <div class="product-item">
-                            <div class="product-image-container">
-                                <img src="https://via.placeholder.com/200x150?text=Petiscos" alt="Petiscos" class="product-image lazyload">
-                                <div class="product-badge">NOVO</div>
-                                <div class="product-actions">
-                                    <button class="product-action-btn"><i class="fas fa-heart"></i></button>
-                                    <button class="product-action-btn"><i class="fas fa-shopping-cart"></i></button>
-                                    <button class="product-action-btn"><i class="fas fa-eye"></i></button>
-                                </div>
-                            </div>
-                            <div class="product-name">Petiscos para Cães</div>
-                            <span class="product-price">R$ 18,90</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Rodapé -->
-        <footer>
-            <div class="footer-divider-red"></div>
-            <p class="footer-company">IMPERIAL Alimentos do Nordeste Ltda</p>
-            <p class="footer-address">Quadra CIMM, 14 - Distrito Industrial - Juazeiro-BA</p>
-            
-            <div class="footer-links">
-                <a href="#">Sobre Nós</a>
-                <a href="#">Produtos</a>
-                <a href="#">Contato</a>
-                <a href="#">Termos de Serviço</a>
-                <a href="#">Política de Privacidade</a>
-            </div>
-            
-            <div class="footer-social">
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="social-links">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fab fa-youtube"></i></a>
             </div>
-            
-            <div class="footer-divider-yellow"></div>
-            <p class="footer-copyright">FaciliteWeb.com © 2005 - Todos os Direitos Reservados. | Desenvolvido com ❤️ para animais e humanos</p>
-        </footer>
+            <div class="utility-links">
+                <a href="#"><i class="fas fa-phone"></i> (74) 3612-7079</a>
+                <a href="#"><i class="fas fa-envelope"></i> contato@imperial.com</a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> Juazeiro-BA</a>
+            </div>
+        </div>
     </div>
-    
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-img">
+                    <img src="https://via.placeholder.com/50x50?text=IMP" alt="Imperial Alimentos">
+                </div>
+                <div>
+                    <div class="logo-text">IMPERIAL</div>
+                    <div class="logo-tagline">Alimentos de Qualidade</div>
+                </div>
+            </a>
+            
+            <div class="search-box">
+                <input type="text" placeholder="Pesquisar produtos...">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            
+            <div class="header-actions">
+                <div class="header-action">
+                    <i class="fas fa-user"></i>
+                    <span>Minha Conta</span>
+                </div>
+                <div class="header-action">
+                    <i class="fas fa-heart"></i>
+                    <span>Favoritos</span>
+                </div>
+                <div class="header-action" style="position: relative;">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Carrinho</span>
+                    <span class="cart-count">3</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navegação -->
+    <nav class="main-nav">
+        <div class="container nav-container">
+            <ul class="main-menu">
+                <li><a href="#"><i class="fas fa-home"></i> Início</a></li>
+                <li>
+                    <a href="#"><i class="fas fa-shopping-basket"></i> Produtos <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><i class="fas fa-seedling"></i> Arroz e Feijão</a></li>
+                        <li><a href="#"><i class="fas fa-wheat-awn"></i> Farináceos</a></li>
+                        <li><a href="#"><i class="fas fa-cubes"></i> Açúcar</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class="fas fa-info-circle"></i> Sobre Nós</a></li>
+                <li><a href="#"><i class="fas fa-blog"></i> Blog</a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i> Contato</a></li>
+                <li class="menu-highlight"><a href="#"><i class="fas fa-percent"></i> Ofertas</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Alimentos Básicos de Qualidade</h1>
+            <p>Na Imperial Alimentos, oferecemos os melhores produtos alimentícios com qualidade garantida e preços competitivos.</p>
+            <div class="hero-btns">
+                <a href="#" class="btn btn-primary"><i class="fas fa-shopping-basket"></i> Comprar Agora</a>
+                <a href="#" class="btn btn-outline"><i class="fas fa-info-circle"></i> Saiba Mais</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Por que escolher a Imperial?</h2>
+                <p>Conheça os benefícios de comprar conosco e tenha a melhor experiência em alimentação</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Entrega Rápida</h3>
+                    <p>Entregamos em toda Juazeiro e região em até 24 horas após a confirmação do pedido.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Qualidade Garantida</h3>
+                    <p>Todos nossos produtos passam por rigoroso controle de qualidade antes de chegar até você.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Produtos Selecionados</h3>
+                    <p>Trabalhamos apenas com os melhores fornecedores e marcas do mercado.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Atendimento Personalizado</h3>
+                    <p>Nossa equipe está pronta para te atender e tirar todas suas dúvidas sobre nossos produtos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categorias -->
+    <section class="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nossas Categorias</h2>
+                <p>Explore nossa variedade de produtos alimentícios básicos</p>
+            </div>
+            
+            <div class="categories-grid">
+                <a href="#" class="category-card">
+                    <div class="category-img">
+                        <i class="fas fa-seedling fa-3x"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>Arroz e Feijão</h3>
+                        <p class="category-count">18 produtos</p>
+                    </div>
+                </a>
+                
+                <a href="#" class="category-card">
+                    <div class="category-img">
+                        <i class="fas fa-wheat-awn fa-3x"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>Farináceos</h3>
+                        <p class="category-count">12 produtos</p>
+                    </div>
+                </a>
+                
+                <a href="#" class="category-card">
+                    <div class="category-img">
+                        <i class="fas fa-cubes fa-3x"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>Açúcar</h3>
+                        <p class="category-count">8 produtos</p>
+                    </div>
+                </a>
+                
+                <a href="#" class="category-card">
+                    <div class="category-img">
+                        <i class="fas fa-mortar-pestle fa-3x"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>Féculas</h3>
+                        <p class="category-count">6 produtos</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produtos -->
+    <section class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Produtos em Destaque</h2>
+                <p>Confira nossos produtos mais populares e as melhores ofertas da semana</p>
+            </div>
+            
+            <div class="products-filter">
+                <button class="filter-btn active">Todos</button>
+                <button class="filter-btn">Arroz</button>
+                <button class="filter-btn">Feijão</button>
+                <button class="filter-btn">Ofertas</button>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <span class="product-badge">-15%</span>
+                    <button class="product-wishlist"><i class="far fa-heart"></i></button>
+                    <div class="product-img">
+                        <img src="https://via.placeholder.com/200x150?text=Arroz+Imperial" alt="Arroz Imperial">
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Arroz</span>
+                        <h3 class="product-title">Arroz Imperial Parboilizado</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(24)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">R$ 12,99</span>
+                            <span class="old-price">R$ 15,30</span>
+                        </div>
+                        <button class="product-btn"><i class="fas fa-shopping-cart"></i> Adicionar</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <button class="product-wishlist"><i class="far fa-heart"></i></button>
+                    <div class="product-img">
+                        <img src="https://via.placeholder.com/200x150?text=Feijão+Imperial" alt="Feijão Imperial">
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Feijão</span>
+                        <h3 class="product-title">Feijão Imperial Carioca</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(18)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">R$ 9,90</span>
+                        </div>
+                        <button class="product-btn"><i class="fas fa-shopping-cart"></i> Adicionar</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <span class="product-badge">Novo</span>
+                    <button class="product-wishlist"><i class="far fa-heart"></i></button>
+                    <div class="product-img">
+                        <img src="https://via.placeholder.com/200x150?text=Açúcar+Cristal" alt="Açúcar Cristal">
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Açúcar</span>
+                        <h3 class="product-title">Açúcar Cristal Imperial</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(32)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">R$ 7,80</span>
+                        </div>
+                        <button class="product-btn"><i class="fas fa-shopping-cart"></i> Adicionar</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <button class="product-wishlist active"><i class="fas fa-heart"></i></button>
+                    <div class="product-img">
+                        <img src="https://via.placeholder.com/200x150?text=Farinha+Mand" alt="Farinha de Mandioca">
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Farináceos</span>
+                        <h3 class="product-title">Farinha de Mandioca Imperial</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(12)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">R$ 6,50</span>
+                        </div>
+                        <button class="product-btn"><i class="fas fa-shopping-cart"></i> Adicionar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner Promo -->
+    <section class="promo-banner">
+        <div class="container promo-content">
+            <div class="promo-text">
+                <span class="promo-badge">Oferta Especial</span>
+                <h2>Desconto de 15% em todos os Arroz e Feijão</h2>
+                <p>Aproveite nossa promoção relâmpago e garanta os melhores produtos básicos com super desconto!</p>
+                <a href="#" class="btn btn-primary"><i class="fas fa-shopping-basket"></i> Compre Agora</a>
+            </div>
+            <div class="promo-img">
+                <img src="https://via.placeholder.com/300x300?text=Arroz+Feijão" alt="Arroz e Feijão">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testemunhos -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>O que nossos clientes dizem</h2>
+                <p>Confira a opinião de quem já comprou conosco e faz parte da família Imperial</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>Sempre compro meus alimentos básicos na Imperial. A qualidade é excelente e o atendimento é muito atencioso. Recomendo!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://via.placeholder.com/50x50" alt="Maria Silva">
+                        </div>
+                        <div class="author-info">
+                            <h4>Maria Silva</h4>
+                            <p>Cliente há 5 anos</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>Produtos de primeira qualidade e preços justos. O feijão Imperial é o melhor que já comprei!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://via.placeholder.com/50x50" alt="Carlos Oliveira">
+                        </div>
+                        <div class="author-info">
+                            <h4>Carlos Oliveira</h4>
+                            <p>Cliente há 2 anos</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>Atendimento excelente e entrega super rápida. Compro todos os meses e nunca tive problemas. Parabéns pela qualidade e seriedade no trabalho!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://via.placeholder.com/50x50" alt="Ana Santos">
+                        </div>
+                        <div class="author-info">
+                            <h4>Ana Santos</h4>
+                            <p>Cliente há 3 anos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Assine nossa Newsletter</h2>
+            <p>Receba ofertas exclusivas e novidades diretamente no seu e-mail</p>
+            
+            <form class="newsletter-form">
+                <input type="email" placeholder="Digite seu melhor e-mail" required>
+                <button type="submit"><i class="fas fa-paper-plane"></i> Assinar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-about">
+                <a href="#" class="footer-logo">
+                    <div class="logo-text" style="color: var(--white);">IMPERIAL</div>
+                </a>
+                <p>Há mais de 15 anos oferecendo os melhores alimentos básicos em Juazeiro e região.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h3 class="footer-title">Links Rápidos</h3>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a href="#">Produtos</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3 class="footer-title">Categorias</h3>
+                <ul>
+                    <li><a href="#">Arroz e Feijão</a></li>
+                    <li><a href="#">Farináceos</a></li>
+                    <li><a href="#">Açúcar</a></li>
+                    <li><a href="#">Féculas</a></li>
+                    <li><a href="#">Ofertas</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3 class="footer-title">Contato</h3>
+                <ul>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Quadra CIMM, 14 - Distrito Industrial, Juazeiro-BA</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>(74) 3612-7079</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>contato@imperial.com</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-clock"></i>
+                        <span>Seg-Sex: 8:00 - 18:00<br>Sáb: 8:00 - 12:00</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2023 Imperial Alimentos. Todos os direitos reservados. Desenvolvido por FaciliteWeb</p>
+            </div>
+        </div>
+    </footer>
+
     <!-- Botão do WhatsApp -->
     <a href="https://wa.me/557436127079" class="whatsapp-btn" target="_blank" aria-label="Chat no WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
-    
-    <!-- Atendente Virtual -->
-    <div class="chatbot-trigger" id="chatbotTrigger" aria-label="Abrir atendente virtual">
-        <i class="fas fa-comment-dots"></i>
-    </div>
-    
-    <div class="chatbot" id="chatbot">
-        <div class="chatbot-header">
-            <h3><i class="fas fa-robot"></i> Atendente Virtual</h3>
-            <button class="chatbot-close" id="chatbotClose" aria-label="Fechar atendente">&times;</button>
-        </div>
-        <div class="chatbot-body" id="chatbotBody">
-            <div class="chatbot-message bot-message">
-                <div class="message-time">10:30</div>
-                <div class="message-bubble">Olá! Sou o assistente virtual da Imperial Alimentos. Como posso ajudar você hoje?</div>
-            </div>
-            <div class="chatbot-message bot-message">
-                <div class="message-time">10:30</div>
-                <div class="message-bubble">Você pode me perguntar sobre produtos, promoções ou nosso horário de funcionamento.</div>
-            </div>
-        </div>
-        <div class="chatbot-input">
-            <input type="text" placeholder="Digite sua mensagem..." id="chatbotInput" aria-label="Digite sua mensagem">
-            <button id="chatbotSend" aria-label="Enviar mensagem"><i class="fas fa-paper-plane"></i></button>
-        </div>
-    </div>
-    
+
     <script>
-        // Chatbot functionality
-        document.addEventListener("DOMContentLoaded", function() {
-            const chatbotTrigger = document.getElementById('chatbotTrigger');
-            const chatbotClose = document.getElementById('chatbotClose');
-            const chatbot = document.getElementById('chatbot');
-            const chatbotBody = document.getElementById('chatbotBody');
-            const chatbotInput = document.getElementById('chatbotInput');
-            const chatbotSend = document.getElementById('chatbotSend');
+        // Filtro de produtos
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
             
-            // Open chatbot
-            chatbotTrigger.addEventListener('click', () => {
-                chatbot.classList.add('active');
-                chatbotInput.focus();
-            });
-            
-            // Close chatbot
-            chatbotClose.addEventListener('click', () => {
-                chatbot.classList.remove('active');
-            });
-            
-            // Send message
-            function sendMessage() {
-                const message = chatbotInput.value.trim();
-                if (message) {
-                    // Add user message
-                    addMessage(message, 'user');
-                    chatbotInput.value = '';
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
                     
-                    // Show typing indicator
-                    const typingIndicator = document.createElement('div');
-                    typingIndicator.className = 'chatbot-message bot-message';
-                    typingIndicator.innerHTML = `
-                        <div class="message-time">${getCurrentTime()}</div>
-                        <div class="message-bubble"><span class="loading"></span></div>
-                    `;
-                    chatbotBody.appendChild(typingIndicator);
-                    chatbotBody.scrollTop = chatbotBody.scrollHeight;
-                    
-                    // Simulate bot response after delay
-                    setTimeout(() => {
-                        // Remove typing indicator
-                        chatbotBody.removeChild(typingIndicator);
-                        
-                        // Add bot response
-                        const responses = [
-                            "Entendi sua dúvida. Posso te ajudar com informações sobre produtos, pedidos ou nosso horário de funcionamento.",
-                            "Temos uma variedade de produtos alimentícios e para animais. Gostaria de saber mais sobre algum específico?",
-                            "Para mais informações, você pode nos contatar pelo telefone (74) 3612-7079 ou pelo WhatsApp.",
-                            "Estamos disponíveis de Segunda a Sexta das 8:00 às 18:00 e Sábado das 8:00 às 12:00.",
-                            "Você pode cadastrar seu email no nosso Grupo de Notícias para receber promoções e novidades!",
-                            "Confira nossa seção de produtos para animais com 20% de desconto esta semana!"
-                        ];
-                        const randomResponse = responses[Math.floor(Math.random() * responses.length)];
-                        addMessage(randomResponse, 'bot');
-                    }, 1500);
-                }
-            }
-            
-            // Add message to chat
-            function addMessage(text, sender) {
-                const messageDiv = document.createElement('div');
-                messageDiv.className = `chatbot-message ${sender}-message`;
-                
-                const timeDiv = document.createElement('div');
-                timeDiv.className = 'message-time';
-                timeDiv.textContent = getCurrentTime();
-                
-                const bubbleDiv = document.createElement('div');
-                bubbleDiv.className = 'message-bubble';
-                bubbleDiv.textContent = text;
-                
-                messageDiv.appendChild(timeDiv);
-                messageDiv.appendChild(bubbleDiv);
-                
-                chatbotBody.appendChild(messageDiv);
-                chatbotBody.scrollTop = chatbotBody.scrollHeight;
-            }
-            
-            // Get current time in HH:MM format
-            function getCurrentTime() {
-                const now = new Date();
-                return now.getHours() + ':' + (now.getMinutes() < 10 ? '0' : '') + now.getMinutes();
-            }
-            
-            // Event listeners
-            chatbotSend.addEventListener('click', sendMessage);
-            chatbotInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') sendMessage();
-            });
-            
-            // Initialize lazy loading
-            if ('loading' in HTMLImageElement.prototype) {
-                const images = document.querySelectorAll('img[loading="lazy"]');
-                images.forEach(img => {
-                    img.loading = 'lazy';
+                    // Here you would normally filter the products
+                    // For this example, we'll just simulate it
+                    console.log('Filter by: ' + this.textContent);
                 });
-            } else {
-                // Fallback para browsers que não suportam loading=lazy
-                const script = document.createElement('script');
-                script.src = 'https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js';
-                document.body.appendChild(script);
-                script.onload = () => {
-                    lazyload();
-                };
-            }
+            });
             
-            // Newsletter form validation
+            // Wishlist toggle
+            const wishlistBtns = document.querySelectorAll('.product-wishlist');
+            
+            wishlistBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const icon = this.querySelector('i');
+                    
+                    if (icon.classList.contains('far')) {
+                        icon.classList.remove('far');
+                        icon.classList.add('fas');
+                        this.classList.add('active');
+                    } else {
+                        icon.classList.remove('fas');
+                        icon.classList.add('far');
+                        this.classList.remove('active');
+                    }
+                });
+            });
+            
+            // Newsletter form
             const newsletterForm = document.querySelector('.newsletter-form');
             if (newsletterForm) {
                 newsletterForm.addEventListener('submit', function(e) {
                     e.preventDefault();
-                    const nameInput = this.querySelector('input[type="text"]');
-                    const emailInput = this.querySelector('input[type="email"]');
+                    const email = this.querySelector('input[type="email"]').value;
                     
-                    if (nameInput.value.trim() === '' || emailInput.value.trim() === '') {
-                        alert('Por favor, preencha todos os campos.');
-                        return;
-                    }
-                    
-                    if (!isValidEmail(emailInput.value)) {
-                        alert('Por favor, insira um email válido.');
-                        return;
-                    }
-                    
-                    // Simulate form submission
-                    const submitBtn = this.querySelector('button[type="submit"]');
-                    const originalText = submitBtn.innerHTML;
-                    submitBtn.innerHTML = '<span class="loading"></span>';
-                    submitBtn.disabled = true;
-                    
-                    setTimeout(() => {
-                        submitBtn.innerHTML = '<i class="fas fa-check"></i> Cadastrado!';
+                    if (email) {
+                        // Simulate form submission
+                        const btn = this.querySelector('button');
+                        const originalText = btn.innerHTML;
+                        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+                        btn.disabled = true;
+                        
                         setTimeout(() => {
-                            submitBtn.innerHTML = originalText;
-                            submitBtn.disabled = false;
+                            btn.innerHTML = '<i class="fas fa-check"></i> Obrigado!';
                             this.reset();
-                        }, 2000);
-                    }, 1500);
+                            
+                            setTimeout(() => {
+                                btn.innerHTML = originalText;
+                                btn.disabled = false;
+                            }, 2000);
+                        }, 1500);
+                    }
                 });
             }
             
-            // Helper function to validate email
-            function isValidEmail(email) {
-                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-            }
+            // Product add to cart
+            const addToCartBtns = document.querySelectorAll('.product-btn');
+            
+            addToCartBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const productTitle = this.closest('.product-card').querySelector('.product-title').textContent;
+                    
+                    // Simulate adding to cart
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+                    this.disabled = true;
+                    
+                    setTimeout(() => {
+                        this.innerHTML = '<i class="fas fa-check"></i> Adicionado';
+                        console.log(productTitle + ' added to cart');
+                        
+                        // Update cart count
+                        const cartCount = document.querySelector('.cart-count');
+                        if (cartCount) {
+                            const currentCount = parseInt(cartCount.textContent);
+                            cartCount.textContent = currentCount + 1;
+                        }
+                        
+                        setTimeout(() => {
+                            this.innerHTML = originalText;
+                            this.disabled = false;
+                        }, 2000);
+                    }, 1000);
+                });
+            });
         });
     </script>
 </body>
